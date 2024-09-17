@@ -56,14 +56,7 @@ public class StringListImpl implements StringList {
     public String remove(String item) {
         validateItem(item);
         int index = indexOf(item);
-        if (index == -1) {
-            throw new ElementNotFoundException();
-        }
-        if (index != size) {
-            System.arraycopy(storage, index + 1, storage, index, size - index);
-        }
-        size--;
-        return item;
+       return remove(index);
     }
 
     @Override
